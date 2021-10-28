@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+h2 {
+  padding-bottom: 1%;
+}
+
+.btn-container {
+  padding-top: 1%;
+  padding-bottom: 5%;
+  text-align: center;
+}
+
+.btn-purple {
+  background-color: rgb(80, 0, 80);
+  color: white;
+  border-style: none;
+  text-decoration: solid;
+  cursor: pointer;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-purple:hover {
+  color: rgb(80, 0, 80);
+  background-color: transparent;
+  border: rgb(80, 0, 80) solid 1px;
+}
+
+.warning-message {
+  color: red;
+  padding-top: 1%;
+  margin-bottom: 0;
+}
+
+.center {
+  text-align: center;
+}
+
+/* App.js */
+
+.logo {
+  border-bottom: lightgrey 1px solid;
+}
+
+nav {
+  padding: 1% 2%;
+  width: 100%;
+  text-align: center;
+}
+
+nav ul {
+  display: inline; 
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  padding-right: 2rem;
+  text-transform: uppercase;
+  font-size: larger;
+  font-weight: 600;
+} 
+
+nav ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+} 
+
+nav button {
+  display: none;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HomePage.js */
+
+.banner {
+  text-align: center;
+  border-top: lightgrey 1px solid;
+  height: 600px;
+  margin-bottom: 0;
+  background-image: url("./banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner-text {
+  padding-bottom: 5%;
+}
+
+.instructions {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  background-color: rgb(80, 0, 80);
+  margin-bottom: 2%;
+}
+
+.instructions i {
+  font-size: 2.5rem;
+}
+
+.features {
+  padding-bottom: 1%;
+}
+
+.feature {
+  font-weight: 500;
+  text-align: center;
+}
+
+.q-a {
+  padding: 1% 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .features {
+    padding-bottom: 5%;
+  }
+  
+  .q-a {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+.q-a h2 {
+  text-align: center;
+  padding: 2% 0;
+}
+
+/* Events.js */
+
+.card-purple {
+  background-color: rgb(80, 0, 80);
+  color: white;
+  border-style: none;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.card-purple:hover {
+  color: rgb(80, 0, 80);
+  background-color: transparent;
+  border: rgb(80, 0, 80) solid 1px;
+}
+
+.text-link:hover {
+  text-decoration: none;
+}
+
+/* Event.js */
+
+.event-title {
+  text-align: center;
+  color:rgb(80, 0, 80);
+}
+
+/* ExpenseForm.js - checkbox styling */
+
+* {
+  box-sizing: border-box;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+  display: flex;
+}
+
+.checkbox-container input[type="checkbox"] {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-container label::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  border-radius: .15em;
+  margin-right: .5em;
+  border: .05em solid black;
+  margin-top: .3em;
+}
+
+.checkbox-container label:hover::before,
+.checkbox-container input[type="checkbox"]:hover + label::before {
+  background-color: lightpink;
+}
+
+.checkbox-container input[type="checkbox"]:focus + label::before {
+  box-shadow: 0 0 20px black;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label::before {
+  content: "\002713";
+  color: white;
+  background-color: rgb(80, 0, 80);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* table styling */
+
+.mytable>tbody>tr>td, .mytable>tbody>tr>th, .mytable>tfoot>tr>td, .mytable>tfoot>tr>th, .mytable>thead>tr>td, .mytable>thead>tr>th {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.custom-cell-width {
+  min-width: 120px;
+}
+
+.thead-purple {
+  background-color: rgb(80, 0, 80);
+  color: white;
+}
+
+table {
+  margin: 1rem 0;
+}
+
+/* responsive footer */
+
+html, 
+body, #root {   
+  height: 100%; 
+} 
+
+#root { 
+  display: flex;   
+  flex-direction: column; 
+}
+
+.content { 
+  flex: 1 0 auto; 
+} 
+
+.footer {   
+  flex-shrink: 0;
+  font-size: small; 
+}
+
+.footer p {
+  margin-bottom: 0;
+}
