@@ -5,8 +5,8 @@ This app was built as a React/Redux practice project and was bootstrapped with [
 
 ## Screenshots
 ![Example screenshot 1](./screenshots/splitco-people.png)
-![Example screenshot 2](./screenshots/splitco-expenses.png)
-![Example screenshot 3](./screenshots/splitco-settle.png)
+![Example screenshot 2](./screenshots/splitco - expenses.png)
+![Example screenshot 3](./screenshots/splitco - settle.png)
 
 ## Demo
 Here is a working live demo: https://splitco.netlify.app/
