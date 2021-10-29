@@ -1,3 +1,28 @@
+# Splitco
+Application for splitting group bills. Users add information about group members and expenses made by the group and get a suggestion how to settle.
+This app was built as a React/Redux practice project.
+
+## Screenshots
+![Example screenshot 1](./screenshots/splitco-people.png)
+![Example screenshot 2](./screenshots/splitco-expenses.png)
+![Example screenshot 3](./screenshots/splitco-settle.png)
+
+## Demo
+Here is a working live demo: dodati link na github pages
+
+## Features
+- no registration needed
+- works on every device with a browser
+- share expenses with the whole group or just some group members
+- edit or delete previously entered expenses
+- detailed reports of expenses and every person’s expenditure
+- save the results in PDF
+
+## Built with
+* React
+* Redux
+* Bootstrap 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
