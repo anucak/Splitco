@@ -19,7 +19,7 @@ export default function App() {
 				<nav className="logo">
 					<NavLink to={ROUTES.homePageRoute()} activeClassName="active">
 						<h1>
-							<img src="splitco_logo.png" width="200px" alt="Splitco logo"></img>
+							<img src="/splitco_logo.png" width="200px" alt="Splitco logo"></img>
 						</h1>
 					</NavLink>
 				</nav>
