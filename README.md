@@ -1,5 +1,6 @@
 # Splitco
 Application for splitting group bills. Users add information about group members and expenses made by the group and get a suggestion how to settle.
+
 This app was built as a React/Redux practice project.
 
 ## Screenshots
