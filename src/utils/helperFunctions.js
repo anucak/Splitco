@@ -18,7 +18,7 @@ export const generatePDF = (event, title, tableId, fileName) => {
 
 	doc.addImage(imgData, "JPEG", 170, 12, 20, 16);
 	doc.setFont("calibri");
-	doc.text(`${event} - ${title}`, 20, 32);
+	doc.text(`${event}: ${title}`, 20, 32);
 	doc.setFontSize(10);
 	doc.text(`Created with Splitco (${date})`, 20, 38);
 
@@ -32,7 +32,7 @@ export const generatePDF = (event, title, tableId, fileName) => {
 		bodyStyles: { fillColor: false },
 		footStyles: { textColor: 80, fillColor: [240, 230, 240] },
 	});
-	doc.save(`${fileName}_splitco.pdf`);
+	doc.save(`${event}_${fileName}.pdf`);
 };
 
 // function that checks whether two arrays have the same elements

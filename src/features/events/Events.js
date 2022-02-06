@@ -32,7 +32,7 @@ export default function Events() {
                 </div>
                 <div className="row">
                     <div className="col-md-6 offset-md-3">
-                        {Object.values(events).map((event) => (
+                        {Object.values(events).reverse().map((event) => (
                             <div key={event.id} className="card my-3">
                                 <Link key={event.id} to={ROUTES.eventRoute(event.id)} className="text-link">
                                     <div className="card-body card-purple">

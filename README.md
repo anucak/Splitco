@@ -3,15 +3,15 @@ Application for splitting group bills. Users add information about group members
 
 This app was built as a React/Redux practice project and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+## Demo
+Here is a working live demo: https://splitco.netlify.app/
+
 ## Screenshots
 ![Example screenshot 1](./screenshots/splitco-people.png)
 
 ![Example screenshot 2](./screenshots/splitco-expenses.png)
 
 ![Example screenshot 3](./screenshots/splitco-settle.png)
-
-## Demo
-Here is a working live demo: https://splitco.netlify.app/
 
 ## Features
 - no registration needed
