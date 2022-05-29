@@ -31,6 +31,15 @@ export default function Events() {
                     </div>
                 </div>
                 <div className="row">
+                    <div className="col-md-6 offset-md-3 my-3">
+                        <Link to={ROUTES.newEventRoute()}>
+                            <button type="button" className="btn btn-outline-dark">
+                                <i className="bi bi-plus"></i> New event
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+                <div className="row">
                     <div className="col-md-6 offset-md-3">
                         {Object.values(events).reverse().map((event) => (
                             <div key={event.id} className="card my-3">
@@ -41,15 +50,6 @@ export default function Events() {
                                 </Link>
                             </div>
                         ))}
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-md-6 offset-md-3 center">
-                        <Link to={ROUTES.newEventRoute()}>
-                            <button type="button" className="btn btn-lg btn-outline-dark">
-                                <i className="bi bi-plus"></i> New event
-                            </button>
-                        </Link>
                     </div>
                 </div>
             </section>

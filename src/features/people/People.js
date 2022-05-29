@@ -17,9 +17,18 @@ export default function People() {
 	const allExpenses = useSelector(selectExpenses);
 
 	const event = events[eventId];
-	const currencySymbol = currencies[event.currency].symbol;
 	const peopleIds = event.peopleIds;
 	const expensesIds = event.expensesIds;
+
+	const currencySymbolSide = currencies[event.currency].symbolSide;
+	const currencySymbol = currencies[event.currency].symbol;
+	let sideLeft = true;
+	let sideRight = false;
+
+	if (currencySymbolSide === "R") {
+		sideLeft = false;
+		sideRight = true;
+	}
 
 	// extract every person that is taking part in an event
 	const people = peopleIds.map(personId => allPeople[personId]);
@@ -100,7 +109,7 @@ export default function People() {
 				<div className="row justify-content-center">
 					<div className="col-md-10">
 						<div className="table-responsive-md">
-							<table id="people" className="table mytable caption-top table-striped align-top">
+							<table id="people" className="table mytable caption-top table-striped align-top text-nowrap">
 								<caption>List of people</caption>
 								<thead className="thead-purple align-top">
 									<tr>
@@ -125,10 +134,26 @@ export default function People() {
 													{person.name}
 												</Link>
 											</td>
-											<td>{`${person.totalExpenses.toFixed(2)} ${currencySymbol}`}</td>
-											<td>{`${person.amountPaid.toFixed(2)} ${currencySymbol}`}</td>
 											<td>
-												{`${(person.amountPaid - person.totalExpenses).toFixed(2)} ${currencySymbol}`}
+												{`${
+													sideLeft ? currencySymbol : ""
+												}${person.totalExpenses.toFixed(2)}${
+													sideRight ? currencySymbol : ""
+												}`}
+											</td>
+											<td>
+												{`${
+													sideLeft ? currencySymbol : ""
+												}${person.amountPaid.toFixed(2)}${
+													sideRight ? currencySymbol : ""
+												}`}
+											</td>
+											<td>
+												{`${
+													sideLeft ? currencySymbol : ""
+												}${(person.amountPaid - person.totalExpenses).toFixed(2)}${
+													sideRight ? currencySymbol : ""
+												}`}
 											</td>
 											<td>
 												{person.expensesIds

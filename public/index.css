@@ -95,7 +95,7 @@ a:hover {
 .banner {
   text-align: center;
   border-top: lightgrey 1px solid;
-  height: 600px;
+  height: 800px;
   margin-bottom: 0;
   background-image: url("./banner.png");
   background-repeat: no-repeat;

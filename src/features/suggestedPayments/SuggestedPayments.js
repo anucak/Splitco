@@ -10,9 +10,18 @@ export default function SuggestedPayments() {
 
     const events = useSelector(selectEvents);
     const event = events[eventId];
-    const currencySymbol = currencies[event.currency].symbol;
 
     const suggestedPayments = useSelector(selectSuggestedPayments);
+
+    const currencySymbolSide = currencies[event.currency].symbolSide;
+	const currencySymbol = currencies[event.currency].symbol;
+	let sideLeft = true;
+	let sideRight = false;
+
+	if (currencySymbolSide === "R") {
+		sideLeft = false;
+		sideRight = true;
+	}
 
     const savePDF = () => {
         // arguments: event name, title, tableId, fileName
@@ -42,7 +51,7 @@ export default function SuggestedPayments() {
                 <div className="row justify-content-center">
                     <div className="col-md-10">
                         <div className="table-responsive-md">
-                            <table id="suggested-payments" className="table table-striped align-top">
+                            <table id="suggested-payments" className="table table-striped align-top text-nowrap">
                                 <thead className="thead-purple align-top">
                                     <tr>
                                         <th scope="col"></th>
@@ -57,7 +66,13 @@ export default function SuggestedPayments() {
                                             <td>{`${index + 1}.`}</td>
                                             <td>{payment.from}</td>
                                             <td>{payment.to}</td>
-                                            <td>{`${payment.amount.toFixed(2)} ${currencySymbol}`}</td>
+                                            <td>
+                                                {`${
+                                                    sideLeft ? currencySymbol : ""
+                                                }${payment.amount.toFixed(2)}${
+                                                    sideRight ? currencySymbol : ""
+                                                }`}
+                                            </td>
                                         </tr>
                                     ))}
                                 </tbody>

@@ -24,11 +24,19 @@ export default function ExpenseForm({
     const events = useSelector(selectEvents);
     const event = events[eventId];
 
-    const currencySymbol = currencies[event.currency].symbol;
-    const peopleIds = event.peopleIds;
-
     const allPeople = useSelector(selectPeople);
+    const peopleIds = event.peopleIds;
     const people = peopleIds.map(personId => allPeople[personId]);
+
+    const currencySymbolSide = currencies[event.currency].symbolSide;
+    const currencySymbol = currencies[event.currency].symbol;
+    let sideLeft = true;
+    let sideRight = false;
+
+    if (currencySymbolSide === 'R') {
+        sideLeft = false;
+        sideRight = true;
+    };
 
     const nameChangeHandler = (e) => {
         const name = e.currentTarget.value;
@@ -98,6 +106,9 @@ export default function ExpenseForm({
                         Amount
                     </label>
                     <div className="input-group mb-3">
+                        {sideLeft ? (
+                            <span class="input-group-text">{currencySymbol}</span>
+                        ) : null}
                         <input
                             type="number"
                             className="form-control"
@@ -109,7 +120,9 @@ export default function ExpenseForm({
                             onClick={amountClickHandler}
                             required
                         />
-                        <span class="input-group-text">{currencySymbol}</span>
+                        {sideRight ? (
+                            <span class="input-group-text">{currencySymbol}</span>
+                        ) : null}
                     </div>
                     <div>
                         <label className="form-label" htmlFor="expense-paid-by">

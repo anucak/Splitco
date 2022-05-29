@@ -16,7 +16,16 @@ export default function Expenses() {
 	const allPeople = useSelector(selectPeople);
 
 	const event = allEvents[eventId];
+	const currencySymbolSide = currencies[event.currency].symbolSide;
 	const currencySymbol = currencies[event.currency].symbol;
+	let sideLeft = true;
+	let sideRight = false;
+
+	if (currencySymbolSide === "R") {
+		sideLeft = false;
+		sideRight = true;
+	}
+
 	const expensesIds = event.expensesIds;
 	const peopleIds = event.peopleIds;
 
@@ -134,7 +143,7 @@ export default function Expenses() {
 						<div className="table-responsive-md">
 							<table
 								id="expenses"
-								className="table mytable caption-top table-striped align-top"
+								className="table mytable caption-top table-striped align-top text-nowrap"
 							>
 								<caption>List of expenses</caption>
 								<thead className="thead-purple align-top">
@@ -167,18 +176,26 @@ export default function Expenses() {
 													{expense.name}
 												</Link>
 											</td>
-											<td>{`${expense.amount.toFixed(
-												2
-											)} ${currencySymbol}`}</td>
+											<td>
+												{`${
+													sideLeft ? currencySymbol : ""
+												}${expense.amount.toFixed(2)}${
+													sideRight ? currencySymbol : ""
+												}`}
+											</td>
 											<td>{allPeople[expense.paidBy].name}</td>
 											<td>
 												{expense.splitWith
 													.map((person) => allPeople[person].name)
 													.join(", ")}
 											</td>
-											<td>{`${expense.amountPerPerson.toFixed(
-												2
-											)} ${currencySymbol}`}</td>
+											<td>
+												{`${
+													sideLeft ? currencySymbol : ""
+												}${expense.amountPerPerson.toFixed(2)}${
+													sideRight ? currencySymbol : ""
+												}`}
+											</td>
 										</tr>
 									))}
 								</tbody>
@@ -188,7 +205,13 @@ export default function Expenses() {
 										<td>
 											<strong>Total</strong>
 										</td>
-										<td>{`${totalAmount()} ${currencySymbol}`}</td>
+										<td>
+											{`${
+												sideLeft ? currencySymbol : ""
+											}${totalAmount()}${
+												sideRight ? currencySymbol : ""
+											}`}
+										</td>
 										<td></td>
 										<td></td>
 										<td></td>
@@ -196,9 +219,7 @@ export default function Expenses() {
 								</tfoot>
 							</table>
 						</div>
-						{peopleIds.length >= 2 ? (
-							<SplitExpensesButton />
-						) : null}
+						{peopleIds.length >= 2 ? <SplitExpensesButton /> : null}
 					</div>
 				</div>
 			</section>

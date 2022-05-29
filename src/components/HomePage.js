@@ -10,7 +10,7 @@ export default function HomePage() {
 		<section>
 			<div className="row align-items-center banner">
 				<div className="col">
-					<h1 className="banner-text">The easiest way to split group bills</h1>
+					<h1 className="banner-text">The easiest way to split group bills.</h1>
 					{Object.keys(events).length !== 0 ? (
 						<div>
 							<Link to={ROUTES.newEventRoute()}>
@@ -105,7 +105,7 @@ export default function HomePage() {
 						for group gifts, group travel, etc.? Have you ever found yourself in
 						that role simply because others think that you're really good at
 						math? If you have, you probably know how tedious and challenging
-						this task can turn out to be. Stop wasting your time and brain cells
+						this task can be. Stop wasting your time and brain cells
 						by using Splitco! Splitco lets you easily enter all the information
 						about your group's expenses and then suggests how to split them.
 					</p>
