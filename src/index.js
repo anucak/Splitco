@@ -24,7 +24,7 @@ const WrapperWithFooter = withFooter(Wrapper);
 
 ReactDOM.render(
   <React.StrictMode>
-    <WrapperWithFooter />,
+    <WrapperWithFooter />
   </React.StrictMode>,
   document.getElementById('root')
 );
